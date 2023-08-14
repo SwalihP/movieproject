@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table>
+    <tr>
+    <td rowspan="3"><img src="{{m.img.url}}" height="300px" width="200px"></td>
+        <td>{{m.name}}</td>
+    </tr>
+        <tr>
+        <td>
+            {{m.desc}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{m.year}}
+        </td>
+        <tr>
+       <td><a href="{% url 'movieapp:updatemovie' m.id %}" class="btn btn-warning">Update</a></td>
+        <td><a href="{% url 'movieapp:deletemovie' m.id %}" class="btn btn-warning">Delete</a></td>
+    </tr>
+
+</table>
+{% endblock %}
